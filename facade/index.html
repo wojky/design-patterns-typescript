@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator walut</title>
+  </head>
+  <body>
+    <main>
+      <div class="currencies">
+        <button id="usd">usd</button>
+        <button id="eur">eur</button>
+        <button id="gbp">gbp</button>
+      </div>
+      <br />
+      <div>
+        <span id="from"></span><input type="number" min="0" value="10" /><button id="switch">na</button
+        ><span id="to"></span>
+      </div>
+      <p id="result"></p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
