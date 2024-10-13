@@ -1,5 +1,4 @@
-import Toastify from "toastify-js";
-import "toastify-js/src/toastify.css";
+import { NotificationService, TranslatedNotificationService } from "./notifcation.service";
 import { TranslationService } from "./translation.service";
 
 document.getElementById("lang")?.addEventListener("click", () => {
@@ -9,30 +8,9 @@ document.getElementById("lang")?.addEventListener("click", () => {
 });
 
 document.getElementById("simple")?.addEventListener("click", () => {
-  Toastify({
-    duration: 1500,
-    gravity: "top",
-    position: "right",
-    text: "This is toast",
-    style: {
-      background: "green",
-    },
-  }).showToast();
+  NotificationService.show("This is text");
 });
 
 document.getElementById("translation")?.addEventListener("click", async () => {
-  const { translation } = await TranslationService.translate("NOTIFICATIONS.EXAMPLE");
-
-  const toast = Toastify({
-    duration: 1500,
-    gravity: "top",
-    position: "right",
-    text: translation,
-  });
-
-  toast.options.onClick = () => {
-    toast.hideToast();
-  };
-
-  toast.showToast();
+  TranslatedNotificationService.show("NOTIFICATIONS.EXAMPLE", { background: "peru" });
 });
